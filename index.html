@@ -115,6 +115,30 @@
       Alexander Neckson is a renowned neck thrower who founded the church of neck.
     </p>
   </div>
+<script>
+const quotes = [
+  "If you arent throwing neck get the fuck outta my car"
+  
+];
 
+const quoteEl = document.getElementById("quote");
+
+function typeText(text, i = 0) {
+  if (i === 0) quoteEl.innerHTML = "";
+
+  if (i < text.length) {
+    quoteEl.innerHTML += text.charAt(i);
+    setTimeout(() => typeText(text, i + 1), 50);
+  }
+}
+
+function newQuote() {
+  const random = quotes[Math.floor(Math.random() * quotes.length)];
+  typeText(random);
+}
+
+newQuote();
+setInterval(newQuote, 5000);
+</script>
 </body>
 </html>
